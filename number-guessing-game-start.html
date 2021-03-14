@@ -101,7 +101,7 @@
     function resetGame() {
       guessCount = 1; //guessCount reset to 1.
       const resetParas = document.querySelectorAll('.resultParas p'); //Empties text out of information paragraphs.
-      for (let i = o; i < resetParas.length; i++) { //Loop through each paragraph inside <div class="resultParas"></div>.
+      for (let i = 0; i < resetParas.length; i++) { //Loop through each paragraph inside <div class="resultParas"></div>.
         resetParas[i].textContent = ''; //Each paragraphs textContent set to '' (empty string).
       }
 
