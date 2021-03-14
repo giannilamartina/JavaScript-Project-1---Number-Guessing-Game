@@ -86,20 +86,22 @@
         guessField.value = ''; //Empty the value out of the form text field.
         guessField.focus(); //Focus the guessField again, ready for the next guess to be entered.
       }
+
+      guessSubmit.addEventListener('click', checkGuess);
     
     function setGameOver() {
       guessField.disabled = true; //First two lines disable form text input and button
       guessSubmit.disabled = true;
       resetButton = document.createElement('button'); //Lines 3,4,& 5 generate new <button> element, set its text label 
       resetButton.textContent = 'Start new game'; //to "Start new game", and
-      document.body.append(resetButton); //add it to the bottom of existing HTML.
+      document.body.appendChild(resetButton); //add it to the bottom of existing HTML.
       resetButton.addEventListener('click', resetGame); //Last line sets an event listener so that when clicked, a function called resetGame() is run.
     }
 
     function resetGame() {
       guessCount = 1; //guessCount reset to 1.
       const resetParas = document.querySelectorAll('.resultParas p'); //Empties text out of information paragraphs.
-      for (let i = o; i < resetParas.length; ++i) { //Loop through each paragraph inside <div class="resultParas"></div>.
+      for (let i = o; i < resetParas.length; i++) { //Loop through each paragraph inside <div class="resultParas"></div>.
         resetParas[i].textContent = ''; //Each paragraphs textContent set to '' (empty string).
       }
 
